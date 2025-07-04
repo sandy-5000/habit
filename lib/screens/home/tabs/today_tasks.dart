@@ -52,12 +52,12 @@ class _TodayTasksState extends State<TodayTasks> {
           date.day == today.day &&
           date.month == today.month &&
           date.year == today.year;
-      return dayBlock(date, isToday);
+      return DayBlock(date: date, selected: isToday);
     });
 
     return Column(
       children: [
-        SizedBox(height: 25),
+        SizedBox(height: 5),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           controller: _scrollController,

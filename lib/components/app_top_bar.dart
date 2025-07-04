@@ -2,19 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habit/controllers/theme_controller.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 PreferredSizeWidget appTopBar() {
   final ThemeController themeController = Get.find();
-  const paddingHorizontal = 12.0;
 
-  return PreferredSize(
-    preferredSize: const Size.fromHeight(72),
-    child: Container(
-      padding: EdgeInsets.only(
-        top: 16,
-        left: paddingHorizontal,
-        right: paddingHorizontal,
-      ),
+  return AppBar(
+    automaticallyImplyLeading: false,
+    elevation: 0,
+    backgroundColor: themeController.theme.value.background,
+    title: Container(
       color: themeController.theme.value.background,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,7 +20,7 @@ PreferredSizeWidget appTopBar() {
           Row(
             children: [
               Icon(
-                CupertinoIcons.slider_horizontal_3,
+                Iconsax.menu_board_outline,
                 color: themeController.theme.value.primary,
                 size: 22,
               ),
@@ -41,7 +38,7 @@ PreferredSizeWidget appTopBar() {
           Row(
             children: [
               Icon(
-                CupertinoIcons.search,
+                Iconsax.search_normal_1_outline,
                 color: themeController.theme.value.light,
                 size: 22,
               ),

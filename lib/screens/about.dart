@@ -11,9 +11,8 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return mainLayout(
-      context,
-      Column(
+    return MainLayout(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

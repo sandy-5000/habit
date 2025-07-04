@@ -6,6 +6,7 @@ class ColorTheme {
   final Color tertiary;
   final Color light;
   final Color lighter;
+  final Color lightest;
   final Color background;
   final Color backgroundLight;
   final Color backgroundLighter;
@@ -20,6 +21,7 @@ class ColorTheme {
     required this.tertiary,
     required this.light,
     required this.lighter,
+    required this.lightest,
     required this.background,
     required this.backgroundLight,
     required this.backgroundLighter,

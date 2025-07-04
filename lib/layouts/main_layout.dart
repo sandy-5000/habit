@@ -5,28 +5,35 @@ import 'package:habit/components/app_top_bar.dart';
 import 'package:habit/components/bottom_navbar.dart';
 import 'package:habit/controllers/theme_controller.dart';
 
-Widget mainLayout(BuildContext context, Widget child) {
+class MainLayout extends StatelessWidget {
   final ThemeController themeController = Get.find();
+  final Widget child;
 
-  return AnnotatedRegion<SystemUiOverlayStyle>(
-    value: const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-      systemNavigationBarColor: Color(0xFF121313),
-    ),
-    child: Scaffold(
-      backgroundColor: themeController.theme.value.background,
-      body: SafeArea(
-        child: Scaffold(
-          appBar: appTopBar(),
-          body: Container(
-            width: MediaQuery.of(context).size.width,
-            color: themeController.theme.value.background,
-            child: child,
+  MainLayout({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark, // android
+        statusBarBrightness: Brightness.dark, // iOS
+        systemNavigationBarColor: Color(0xFF121313),
+      ),
+      child: Scaffold(
+        backgroundColor: themeController.theme.value.background,
+        body: SafeArea(
+          child: Scaffold(
+            appBar: appTopBar(),
+            body: Container(
+              width: MediaQuery.of(context).size.width,
+              color: themeController.theme.value.background,
+              child: child,
+            ),
+            bottomNavigationBar: bottomNavBar(),
           ),
-          bottomNavigationBar: bottomNavBar(),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

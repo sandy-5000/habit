@@ -5,6 +5,7 @@ import 'package:habit/screens/home/index.dart';
 import 'package:habit/utils/initalize_controllers.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   initalizeControllers();
   runApp(Application());
 }

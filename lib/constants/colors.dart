@@ -7,6 +7,7 @@ final redColorTheme = ColorTheme(
   tertiary: Color(0x22C03658),
   light: Color(0xFFA4A5A4),
   lighter: Color(0xFFD2D2D2),
+  lightest: Color(0xFFFFFFFF),
   background: Color(0xFF121313),
   backgroundLight: Color(0xFF1C1C1C),
   backgroundLighter: Color(0xFF252524),
