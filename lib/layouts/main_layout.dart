@@ -30,7 +30,7 @@ class MainLayout extends StatelessWidget {
               color: themeController.theme.value.background,
               child: child,
             ),
-            bottomNavigationBar: bottomNavBar(),
+            bottomNavigationBar: BottomNavBar(),
           ),
         ),
       ),

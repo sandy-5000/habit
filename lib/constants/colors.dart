@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habit/utils/color_theme.dart';
+import 'package:habit/types/color_theme.dart';
 
 final redColorTheme = ColorTheme(
   primary: Color(0xFFC03658),

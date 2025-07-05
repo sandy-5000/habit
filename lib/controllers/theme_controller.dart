@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:habit/constants/colors.dart';
-import 'package:habit/utils/color_theme.dart';
+import 'package:habit/types/color_theme.dart';
 
 class ThemeController extends GetxController {
   var theme = redColorTheme.obs;
