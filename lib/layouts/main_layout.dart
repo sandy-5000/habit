@@ -16,7 +16,7 @@ class MainLayout extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark, // android
+        statusBarIconBrightness: Brightness.light, // android
         statusBarBrightness: Brightness.dark, // iOS
         systemNavigationBarColor: Color(0xFF121313),
       ),

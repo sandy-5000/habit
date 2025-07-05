@@ -24,13 +24,13 @@ class BottomNavBar extends StatelessWidget {
 
     final normalTextStyle = TextStyle(
       color: themeController.theme.value.textOnBackground,
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: FontWeight.w400,
       fontFamily: 'Mulish',
     );
     final selectedTextStyle = TextStyle(
       color: themeController.theme.value.primary,
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: FontWeight.w800,
       fontFamily: 'Mulish',
     );
@@ -47,7 +47,7 @@ class BottomNavBar extends StatelessWidget {
       final selected = routeController.tab.value;
 
       return SizedBox(
-        height: 100,
+        height: 80,
         width: double.infinity,
         child: Container(
           color: themeController.theme.value.backgroundLight,
@@ -64,8 +64,8 @@ class BottomNavBar extends StatelessWidget {
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 27,
-                        vertical: 7,
+                        horizontal: 20,
+                        vertical: 4,
                       ),
                       decoration: navItem == selected
                           ? selectedDecoration
@@ -73,6 +73,7 @@ class BottomNavBar extends StatelessWidget {
                       child: Icon(
                         // Iconsax.task_square_outline,
                         navItem.icon,
+                        size: 20,
                         color: navItem == selected
                             ? selectedColor
                             : normalColor,

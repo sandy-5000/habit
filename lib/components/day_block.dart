@@ -50,7 +50,7 @@ class DayBlock extends StatelessWidget {
                   child: Text(
                     getWeekDay(date.weekday),
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: 10,
                       fontWeight: FontWeight.w400,
                       color: themeController.theme.value.lightest,
                       fontFamily: 'Malish',
@@ -82,7 +82,7 @@ class DayBlock extends StatelessWidget {
                         child: Text(
                           date.day.toString(),
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: selected
                                 ? FontWeight.w700
                                 : FontWeight.w400,

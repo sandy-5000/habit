@@ -19,7 +19,9 @@ class _TodayTasksState extends State<TodayTasks> {
   @override
   void initState() {
     super.initState();
-    _scrollToTodayCenter();
+    Future.delayed(Duration(seconds: 1), () {
+      _scrollToTodayCenter();
+    });
   }
 
   void _scrollToTodayCenter() {
