@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:habit/components/app_button.dart';
 import 'package:habit/components/day_block.dart';
 import 'package:habit/controllers/theme_controller.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 class TodayTasks extends StatefulWidget {
   const TodayTasks({super.key});
@@ -66,6 +68,68 @@ class _TodayTasksState extends State<TodayTasks> {
           child: Row(
             key: _rowKey,
             children: [...dayBlocks, SizedBox(width: 5)],
+          ),
+        ),
+        SizedBox(height: 20),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  AppTextButton(text: 'All', colored: true),
+                  SizedBox(width: 5),
+                  AppTextIconButton(
+                    icon: Iconsax.element_plus_outline,
+                    text: 'New list',
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  AppIconButton(icon: CupertinoIcons.slider_horizontal_3),
+                  SizedBox(width: 5),
+                  AppIconButton(icon: CupertinoIcons.question_circle),
+                  SizedBox(width: 5),
+                  AppIconButton(icon: CupertinoIcons.xmark),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 100,
+                child: Image.asset('assets/icon_calender.png'),
+              ),
+              SizedBox(height: 25),
+              Text(
+                'There is nothing scheduled',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: themeController.theme.value.textOnBackground,
+                  fontFamily: 'Mulish',
+                ),
+              ),
+              SizedBox(height: 2),
+              Text(
+                'Try adding new activities',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w400,
+                  color: themeController.theme.value.light,
+                  fontFamily: 'Mulish',
+                ),
+              ),
+              SizedBox(height: 100),
+            ],
           ),
         ),
       ],

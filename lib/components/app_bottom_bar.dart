@@ -5,11 +5,11 @@ import 'package:habit/controllers/route_controller.dart';
 import 'package:habit/controllers/theme_controller.dart';
 import 'package:habit/types/bottom_nav.dart';
 
-class BottomNavBar extends StatelessWidget {
+class AppBottomBar extends StatelessWidget {
   final ThemeController themeController = Get.find();
   final RouteController routeController = Get.find();
 
-  BottomNavBar({super.key});
+  AppBottomBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class BottomNavBar extends StatelessWidget {
     final normalColor = themeController.theme.value.textOnPrimary;
 
     return Obx(() {
-      final selected = routeController.tab.value;
+      final selected = routeController.homeTab.value;
 
       return SizedBox(
         height: 80,
@@ -55,14 +55,14 @@ class BottomNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: navValues.map((navItem) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      routeController.selectTab(navItem);
-                    },
-                    child: Container(
+              return GestureDetector(
+                onTap: () {
+                  routeController.selectHomeTab(navItem);
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 20,
                         vertical: 4,
@@ -73,21 +73,21 @@ class BottomNavBar extends StatelessWidget {
                       child: Icon(
                         // Iconsax.task_square_outline,
                         navItem.icon,
-                        size: 20,
+                        size: 18,
                         color: navItem == selected
                             ? selectedColor
                             : normalColor,
                       ),
                     ),
-                  ),
-                  SizedBox(height: betweenSpace),
-                  Text(
-                    navItem.name,
-                    style: navItem == selected
-                        ? selectedTextStyle
-                        : normalTextStyle,
-                  ),
-                ],
+                    SizedBox(height: betweenSpace),
+                    Text(
+                      navItem.name,
+                      style: navItem == selected
+                          ? selectedTextStyle
+                          : normalTextStyle,
+                    ),
+                  ],
+                ),
               );
             }).toList(),
           ),

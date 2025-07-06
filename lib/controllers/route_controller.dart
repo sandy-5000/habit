@@ -4,7 +4,7 @@ import 'package:habit/utils/navigation.dart';
 
 class RouteController extends GetxController {
   var route = Screen.home.obs;
-  var tab = HomeNav.today.obs;
+  var homeTab = HomeNav.today.obs;
 
   void goTo({
     required Screen screen,
@@ -22,7 +22,7 @@ class RouteController extends GetxController {
     }
   }
 
-  void selectTab(HomeNav tab) {
-    this.tab.value = tab;
+  void selectHomeTab(HomeNav tab) {
+    homeTab.value = tab;
   }
 }
